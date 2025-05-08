@@ -40,7 +40,7 @@ def signup_post():
     password = request.form.get('password')
 
     
-    user = db.session.execute(text('select * from user where email = :email', {':email': email})).all()
+    user = db.session.execute(text('select * from user where email = %s', email)).all()
    
 
 
